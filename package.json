@@ -1,0 +1,26 @@
+{
+    "name": "graphql-sandbox",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "dev": "node ./src/index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/bojzi/graphql-sandbox.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/bojzi/graphql-sandbox/issues"
+    },
+    "homepage": "https://github.com/bojzi/graphql-sandbox#readme",
+    "dependencies": {
+        "apollo-server": "^2.4.8",
+        "graphql": "^14.2.1",
+        "sequelize": "^5.7.5",
+        "sqlite3": "^4.0.6"
+    }
+}
