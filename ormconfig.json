@@ -1,0 +1,7 @@
+{
+    "type": "sqlite",
+    "database": "./database.sqlite",
+    "logging": true,
+    "synchronize": true,
+    "entities": ["src/data/entities/**/*.ts"]
+}

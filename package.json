@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "dev": "node ./src/index.js"
+        "start": "ts-node src/index.ts"
     },
     "repository": {
         "type": "git",
@@ -20,7 +20,11 @@
     "dependencies": {
         "apollo-server": "^2.4.8",
         "graphql": "^14.2.1",
+        "reflect-metadata": "^0.1.13",
         "sequelize": "^5.7.5",
-        "sqlite3": "^4.0.6"
+        "sqlite3": "^4.0.6",
+        "ts-node": "^8.1.0",
+        "typeorm": "^0.2.16",
+        "typescript": "^3.4.5"
     }
 }

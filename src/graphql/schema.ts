@@ -1,29 +1,28 @@
-const { gql } = require('apollo-server');
+import { gql } from 'apollo-server';
 
-const typeDefs = gql`
+export default gql`
     type Author {
         id: Int!
         firstName: String!
         lastName: String!
-        books: [Book]!
+        books: [Book]
     }
 
     type Book {
         id: Int!
-        name: String!
-        author: Author!
+        title: String!
+        author: Author
     }
+
     type Query {
         author(id: Int!): Author
-        allBooks: [Book]!
         allAuthors: [Author]!
         book(id: Int!): Book
+        allBooks: [Book]!
     }
 
     type Mutation {
         createAuthor(firstName: String!, lastName: String!): Author!
-        createBook(authorId: Int!, name: String!): Book!
+        createBook(authorId: Int!, title: String!): Book!
     }
 `;
-
-module.exports = typeDefs;
