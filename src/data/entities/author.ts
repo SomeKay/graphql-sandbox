@@ -2,7 +2,7 @@ import {
     BaseEntity,
     Column,
     Entity,
-    OneToMany,
+    ManyToMany,
     PrimaryGeneratedColumn,
 } from 'typeorm';
 import { Book } from './book';
@@ -18,6 +18,6 @@ export class Author extends BaseEntity {
     @Column()
     lastName!: string;
 
-    @OneToMany(type => Book, book => book.author)
-    books!: Book[];
+    @ManyToMany(type => Book, book => book.authors)
+    books: Book[] | undefined;
 }

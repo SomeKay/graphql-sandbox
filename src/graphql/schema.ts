@@ -1,28 +1,5 @@
-import { gql } from 'apollo-server';
+import { mergeTypes } from 'merge-graphql-schemas';
+import author from './types/author';
+import book from './types/book';
 
-export default gql`
-    type Author {
-        id: Int!
-        firstName: String!
-        lastName: String!
-        books: [Book]
-    }
-
-    type Book {
-        id: Int!
-        title: String!
-        author: Author
-    }
-
-    type Query {
-        author(id: Int!): Author
-        allAuthors: [Author]!
-        book(id: Int!): Book
-        allBooks: [Book]!
-    }
-
-    type Mutation {
-        createAuthor(firstName: String!, lastName: String!): Author!
-        createBook(authorId: Int!, title: String!): Book!
-    }
-`;
+export default mergeTypes([author, book], { all: true });

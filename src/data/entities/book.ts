@@ -2,7 +2,8 @@ import {
     BaseEntity,
     Column,
     Entity,
-    ManyToOne,
+    JoinTable,
+    ManyToMany,
     PrimaryGeneratedColumn,
 } from 'typeorm';
 import { Author } from './author';
@@ -15,6 +16,7 @@ export class Book extends BaseEntity {
     @Column()
     title!: string;
 
-    @ManyToOne(type => Author, author => author.books)
-    author!: Author;
+    @ManyToMany(type => Author, author => author.books)
+    @JoinTable()
+    authors!: Author[];
 }
