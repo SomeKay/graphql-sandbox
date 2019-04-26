@@ -15,5 +15,6 @@ export default gql`
 
     type Mutation {
         createAuthor(firstName: String!, lastName: String!): Author!
+        updateAuthor(id: Int!, firstName: String, lastName: String): Author!
     }
 `;

@@ -14,5 +14,6 @@ export default gql`
 
     type Mutation {
         createBook(authorIds: [Int!]!, title: String!): Book!
+        updateBook(id: Int!, title: String!): Book!
     }
 `;

@@ -17,5 +17,26 @@ export default {
                 lastName,
             });
         },
+        async updateAuthor(
+            _: any,
+            {
+                id,
+                firstName,
+                lastName,
+            }: { id: number; firstName?: string; lastName?: string }
+        ) {
+            let author = await getRepository(Author).findOne(id);
+            if (author) {
+                if (firstName) {
+                    author.firstName = firstName;
+                }
+                if (lastName) {
+                    author.lastName = lastName;
+                }
+                return author.save();
+            } else {
+                return null;
+            }
+        },
     },
 };

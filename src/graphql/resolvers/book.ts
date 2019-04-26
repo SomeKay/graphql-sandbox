@@ -22,5 +22,14 @@ export default {
                 title: title,
             });
         },
+        async updateBook(_: any, { id, title }: { id: number; title: string }) {
+            let book = await getRepository(Book).findOne(id);
+            if (book) {
+                book.title = title;
+                return book.save();
+            } else {
+                return null;
+            }
+        },
     },
 };
