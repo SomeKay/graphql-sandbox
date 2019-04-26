@@ -35,7 +35,9 @@ export default {
                 }
                 return author.save();
             } else {
-                return null;
+                throw new Error(
+                    `Author not found. Are you sure that ID: "${id}" is correct?`
+                );
             }
         },
     },

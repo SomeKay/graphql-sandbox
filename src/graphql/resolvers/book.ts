@@ -28,7 +28,9 @@ export default {
                 book.title = title;
                 return book.save();
             } else {
-                return null;
+                throw new Error(
+                    `Book not found. Are you sure that ID: "${id}" is correct?`
+                );
             }
         },
     },
